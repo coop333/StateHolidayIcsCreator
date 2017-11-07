@@ -60,7 +60,7 @@ namespace StateHolidayIcsCreator
                 var serializedCalendar = serializer.SerializeToString(calendar);
                 File.WriteAllText(filePath, serializedCalendar);
                 Console.WriteLine("File has been saved");
-                Console.WriteLine("To import these holidays to your Outlook calendar, click \"File\", \"Open\", \"Import\" and then select \"Import and iCalendar (.ics) or vCalendar file (.vcs).");
+                Console.WriteLine("To import these holidays to your Outlook calendar, click \"File\", \"Open\", \"Import\" and then select \"Import an iCalendar (.ics) or vCalendar file (.vcs).");
                 Console.WriteLine("Press any key to exit");
                 Console.ReadLine();
             }

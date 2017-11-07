@@ -2,4 +2,6 @@
 # This .gitignore file was automatically created by Microsoft(R) Visual Studio.
 ################################################################################
 
-/StateHolidayIcsCreator/StateHolidayIcsCreator/obj/Debug
+/StateHolidayIcsCreator/StateHolidayIcsCreator/obj
+/StateHolidayIcsCreator/StateHolidayIcsCreator/bin
+/StateHolidayIcsCreator/.vs/StateHolidayIcsCreator/v14
