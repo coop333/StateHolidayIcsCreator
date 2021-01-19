@@ -96,7 +96,7 @@ namespace StateHolidayIcsCreator.Classes
             {
                 Summary = summary,
                 DtStart = new CalDateTime(dtEvent.Date),
-                DtEnd = new CalDateTime(dtEvent.Date)
+                IsAllDay = true
             });
         }
 
