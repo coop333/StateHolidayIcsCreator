@@ -1,4 +1,5 @@
 ﻿using Ical.Net;
+using Ical.Net.CalendarComponents;
 using Ical.Net.DataTypes;
 using System;
 using System.Collections.Generic;
@@ -7,11 +8,11 @@ namespace StateHolidayIcsCreator.Classes
 {
     public class GetAnnualHolidays
     {
-        public static List<Event> GetHolidayEvents(int year)
+        public static List<CalendarEvent> GetHolidayEvents(int year)
         {
             DateTime dtEvent;
             string summary;
-            var list = new List<Event>();
+            var list = new List<CalendarEvent>();
 
             summary = "New Year's day";
             dtEvent = new DateTime(year, 1, 1);
@@ -71,7 +72,7 @@ namespace StateHolidayIcsCreator.Classes
 
             return list;
         }
-        private static void FixEventsThatFallOnWeekend(ref List<Event> list, string summary, DateTime dt, bool isVeteransDay)
+        private static void FixEventsThatFallOnWeekend(ref List<CalendarEvent> list, string summary, DateTime dt, bool isVeteransDay)
         {
             //http://www.calhr.ca.gov/employees/Pages/holidays.aspx
             summary += " (Observed)";
@@ -89,9 +90,9 @@ namespace StateHolidayIcsCreator.Classes
             }
         }
 
-        private static void AddEvent(ref List<Event> e, string summary, DateTime dtEvent)
+        private static void AddEvent(ref List<CalendarEvent> e, string summary, DateTime dtEvent)
         {
-            e.Add(new Event
+            e.Add(new CalendarEvent
             {
                 Summary = summary,
                 DtStart = new CalDateTime(dtEvent.Date),

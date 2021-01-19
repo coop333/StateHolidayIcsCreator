@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Ical;
 using Ical.Net;
 using Ical.Net.DataTypes;
-using Ical.Net.Serialization.iCalendar.Serializers;
 using Ical.Net.Serialization;
 using System.IO;
 using StateHolidayIcsCreator.Classes;
@@ -15,15 +14,14 @@ namespace StateHolidayIcsCreator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
             try
             {
                 Console.WriteLine("Welcome to the State Holiday .ics file creator.");
                 Console.WriteLine("Please enter the year for which you would like to create the .ics file.");
                 string year = Console.ReadLine();
-                int iYear;
-                bool isValidYear = int.TryParse(year, out iYear);
+                bool isValidYear = int.TryParse(year, out int iYear);
                 while (!isValidYear || iYear > (DateTime.Now.Year + 5) || iYear < (DateTime.Now.Year - 2))
                 {
                     Console.WriteLine("I'm sorry but that's an invalid year. Try again");
